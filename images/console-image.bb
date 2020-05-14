@@ -18,7 +18,7 @@ RPI_STUFF = " \
     userland \
 "
 
-IMAGE_INSTALL += " \
+IMAGE_INSTALL_append = " \
     ${RPI_STUFF} \
     ${WIFI} \
 "

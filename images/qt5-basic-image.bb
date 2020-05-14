@@ -34,7 +34,7 @@ TEST_APPS += " \
     tspress-tools \
 "
 
-IMAGE_INSTALL += " \
+IMAGE_INSTALL_append = " \
     ${FONTS} \
     ${QT_DEV_TOOLS} \
     ${QT_TOOLS} \

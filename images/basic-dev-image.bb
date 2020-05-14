@@ -60,6 +60,7 @@ EXTRA_TOOLS = " \
     iptables \
     less \
     lsof \
+    mosquitto \
     netcat-openbsd \
     nmap \
     ntp ntp-tickadj \
@@ -75,44 +76,22 @@ EXTRA_TOOLS = " \
     zip \
 "
 
-IMAGE_INSTALL += " \
+IMAGE_INSTALL_append = " \
     ${CORE_OS} \
     ${EXTRA_TOOLS} \
     ${KERNEL_EXTRA} \
 "
 
-IMAGE_FILE_BLACKLIST += " \
-    /etc/init.d/hwclock.sh \
- "
-
-remove_blacklist_files() {
-    for i in ${IMAGE_FILE_BLACKLIST}; do
-        rm -rf ${IMAGE_ROOTFS}$i
-    done
-}
-
 set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
 }
-
-#disable_bootlogd() {
-#    echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
-#}
-
-#disable_rng_daemon() {
-#    rm -f ${IMAGE_ROOTFS}/etc/rcS.d/S*rng-tools
-#    rm -f ${IMAGE_ROOTFS}/etc/rc5.d/S*rng-tools
-#}
 
 create_opt_dir() {
     mkdir -p ${IMAGE_ROOTFS}/opt
 }
 
 ROOTFS_POSTPROCESS_COMMAND += " \
-    remove_blacklist_files ; \
     set_local_timezone ; \
-    disable_bootlogd ; \
-    disable_rng_daemon ; \
     create_opt_dir ; \
 "
 

@@ -53,7 +53,7 @@ TEST_APPS += " \
     qt5-opengles2-test \
 "
 
-IMAGE_INSTALL += " \
+IMAGE_INSTALL_append = " \
     ${QT5_DEV_PKGS} \
     ${QT5_PKGS} \
     ${TEST_APPS} \
