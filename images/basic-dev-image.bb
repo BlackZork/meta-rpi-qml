@@ -10,6 +10,7 @@ CORE_OS = " \
     openssh openssh-keygen openssh-sftp-server \
     packagegroup-core-boot \
     tzdata \
+    polkit \
 "
 
 KERNEL_EXTRA = " \
