@@ -60,8 +60,8 @@ EXTRA_TOOLS = " \
     iproute2 \
     iptables \
     less \
+    libmosquitto1 \
     lsof \
-    mosquitto \
     netcat-openbsd \
     nmap \
     ntp ntp-tickadj \
