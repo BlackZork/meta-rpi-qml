@@ -20,7 +20,7 @@ QT_TOOLS = " \
 FONTS = " \
     fontconfig \
     fontconfig-utils \
-    ttf-bitstream-vera \
+    ttf-droid-sans \
 "
 
 TSLIB = " \

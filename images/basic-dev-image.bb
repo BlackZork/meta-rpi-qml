@@ -45,6 +45,11 @@ DEV_SDK = " \
     python3-modules \
 "
 
+DEV_TOOLS = " \
+    gdb \
+    gdbserver \
+"
+
 EXTRA_TOOLS = " \
     bzip2 \
     curl \
@@ -60,8 +65,8 @@ EXTRA_TOOLS = " \
     iproute2 \
     iptables \
     less \
+    libmosquitto1 \
     lsof \
-    mosquitto \
     netcat-openbsd \
     nmap \
     ntp ntp-tickadj \
@@ -81,6 +86,7 @@ IMAGE_INSTALL_append = " \
     ${CORE_OS} \
     ${EXTRA_TOOLS} \
     ${KERNEL_EXTRA} \
+    ${DEV_TOOLS} \
 "
 
 set_local_timezone() {
